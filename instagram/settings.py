@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xif!9h26aebvfk@ivw8*&i*3s@dk@i0b!ue3@5tv7_o#vk22!)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-instagram-demo.onrender.com', 'localhost', '127.0.0.1', '*']
 
 
 # Application definition
