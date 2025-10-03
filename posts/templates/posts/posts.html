@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+    Posts page
+{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'posts/poststyles.css' %}">
+{% endblock %}
+
+{% block body %}
+    <H1>THIS IS THE PAGE FOR ALL THE POSTS</H1>
+
+    <div class="container">
+        
+        <header class="header">
+            <h1>POSTS</h1>
+            <p>All the posts view here.</p>
+        </header>
+
+        <div class="card-container">
+
+            {% for post in posts %}
+                <div class="card">
+                    <img src="{{post.image.url}}" alt="{{post.image_type}}">
+                    <div class="card-content">
+                        <div>
+                            <h3>{{post.name}}</h3>
+                            <div class="likes-container">
+                                <span>Likes:</span>
+                                <span class="likes-count">{{post.likes}}</span>
+                            </div>
+                        </div>
+                       
+                        <p>
+                            {{post.description}}
+                        </p>
+                        <a href="{% url 'post_details' post.id %}" class="btn btn-blue">Learn More : {{post.id}}</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

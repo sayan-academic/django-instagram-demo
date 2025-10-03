@@ -1,0 +1,141 @@
+        h1{
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+            color: #2d3748;
+            margin: 0;
+        }
+
+        /* Main Container */
+        .container {
+            color: #3b82f6;
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1rem;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1a202c;
+        }
+
+        .header p {
+            font-size: 1.125rem;
+            color: #4a5568;
+            margin-top: 0.5rem;
+        }
+
+        /* Card Container using Flexbox */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        /* Individual Card Styles */
+        .card {
+            width: 100%;
+            max-width: 24rem; /* Equivalent to max-w-sm */
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 12rem; /* Equivalent to h-48 */
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Allows content to take up available space */
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .card-content p {
+            color: #4a5568;
+            margin-bottom: 1rem;
+            flex-grow: 1; /* Pushes the button to the bottom */
+            margin-top: 0;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-top: auto; /* Aligns button to the bottom */
+            align-self: flex-start;
+        }
+
+        .likes-container {
+            display: flex;        /* This helps vertically align the text and the badge */
+            align-items: center;
+        }
+
+        .likes-count {
+            background-color: #2ecc71; /* A vivid green */
+            color: white;
+            font-weight: bold;
+            border-radius: 50%;       /* This makes the element a perfect circle */
+            width: 30px;              /* Fixed width */
+            height: 30px;             /* Fixed height */
+            
+            /* These next 3 lines are for centering the text inside the circle */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Adds a subtle shadow */
+            margin-left: 8px;
+        }
+
+        .btn-blue { background-color: #3b82f6; }
+        .btn-blue:hover { background-color: #2563eb; }
+
+        .btn-red { background-color: #ef4444; }
+        .btn-red:hover { background-color: #dc2626; }
+
+        .btn-green { background-color: #22c55e; }
+        .btn-green:hover { background-color: #16a34a; }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .container {
+                padding: 2rem;
+            }
+        }

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+    Posts Homepage 
+{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static "posts/indexstyles.css" %}">
+{% endblock %}
+
+{% block body %}
+    <h1>
+        THIS IS THE HOMEPAGE OF POSTS
+    </h1>
+    <hr>
+    <button>
+        
+        <a href="{% url 'post' %}">GO TO POSTS</a>
+        
+    </button>
+    
+{% endblock %}
