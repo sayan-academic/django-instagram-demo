@@ -7,6 +7,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 
+#added line
+app_name = 'posts'
 
 urlpatterns = [
     path('', views.index, name="index"),

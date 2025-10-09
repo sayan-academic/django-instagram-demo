@@ -36,7 +36,7 @@
                         <p>
                             {{post.description}}
                         </p>
-                        <a href="{% url 'post_details' post.id %}" class="btn btn-blue">Learn More : {{post.id}}</a>
+                        <a href="{% url 'posts:post_details' post.id %}" class="btn btn-blue">Learn More : {{post.id}}</a>
                     </div>
                 </div>
             {% endfor %}
