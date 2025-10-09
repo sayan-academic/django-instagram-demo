@@ -7,7 +7,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 
-#added line
+#added line, creates namespace for the app
 app_name = 'posts'
 
 urlpatterns = [
