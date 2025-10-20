@@ -126,6 +126,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# login using django's admin auth
+LOGIN_URL = '/admin/login/'
+# straight redirect after login
+LOGIN_REDIRECT_URL = 'homepage'
+
+# session expire at browser close
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
