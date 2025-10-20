@@ -14,4 +14,5 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('post/', views.posts, name="post"),
     path('<int:post_id>/', views.post_details, name="post_details"),
+    path('postform1/', views.postform1, name="postform1"),
 ]
