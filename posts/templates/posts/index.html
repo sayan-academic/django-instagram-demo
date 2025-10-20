@@ -27,6 +27,15 @@
         <a href="{% url 'posts:postform1' %}">CREATE A NEW POST</a>
     </button>
 
+    <br>
+    <hr>
+    <h1>OPEN A FORMSET FOR MULTIPLE POSTS</h1>
+    <button>
+        <a href="{% url "posts:postformset" %}">OPEN A FORMSET</a>
+    </button>
+    <br>
+    <hr>
+    
    <script>
         {% if messages %}
             {% for message in messages %}

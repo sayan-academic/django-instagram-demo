@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 from .models import Post
 from .forms import PostForm
+from django.forms import formset_factory, modelformset_factory
 
 #added line
 from django.shortcuts import get_object_or_404
@@ -29,3 +30,15 @@ def postform1(request):
     else:
         form = PostForm()
     return render(request, 'posts/postform1.html', {'postform': form})
+
+def postformset(request):
+    PostFormSet = modelformset_factory(Post, form=PostForm, extra=2, max_num=2)
+    if request.method == 'POST':
+        formset = PostFormSet(request.POST, request.FILES)
+        if formset.is_valid():
+            postset = formset.save()
+            messages.success(request, f"New Posts successfully added !!")
+            return redirect('posts:index')
+    else:
+        formset = PostFormSet(queryset=Post.objects.none())
+    return render(request, "posts/postformset.html", {'postformset': formset})
