@@ -26,5 +26,13 @@
     <button>
         <a href="{% url 'posts:postform1' %}">CREATE A NEW POST</a>
     </button>
+
+   <script>
+        {% if messages %}
+            {% for message in messages %}
+                alert("{{ message }}");
+            {% endfor %}
+        {% endif %}
+    </script>
     
 {% endblock %}

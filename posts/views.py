@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.http import HttpResponse
 from .models import Post
 from .forms import PostForm
@@ -22,7 +23,8 @@ def postform1(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if (form.is_valid()):
-            form.save()
+            post = form.save()
+            messages.success(request, f"New Post Successfully created : {post.name}!!")
             return redirect('posts:index')
     else:
         form = PostForm()
