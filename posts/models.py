@@ -15,7 +15,7 @@ class Post(models.Model):
         ("DC", "DOCUMENT"),
         ("PN", "PANORAMA"),
     ]
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
     image = models.ImageField(upload_to="images/")
     likes = models.IntegerField(default=0)
     description = models.TextField(default="No Description")

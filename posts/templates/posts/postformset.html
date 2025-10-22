@@ -5,6 +5,9 @@
         form for multiple post UPLOAD
 {% endblock %}
 
+{% block stylesheet %}
+{% endblock %}
+
 {% block body %}
     <h2>Create New Posts</h2>
 
@@ -12,7 +15,7 @@
         {% csrf_token %}
 
         {{ postformset.management_form }}
-        
+        {{postform.media}}
         {% for form in postformset %}
             {{form.as_p}}
             <hr>

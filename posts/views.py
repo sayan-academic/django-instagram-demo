@@ -37,7 +37,8 @@ def postformset(request):
         formset = PostFormSet(request.POST, request.FILES)
         if formset.is_valid():
             postset = formset.save()
-            messages.success(request, f"New Posts successfully added !!")
+            added_posts = [post.name for post in postset]
+            messages.success(request, f"New Posts successfully added : {added_posts}!!")
             return redirect('posts:index')
     else:
         formset = PostFormSet(queryset=Post.objects.none())
