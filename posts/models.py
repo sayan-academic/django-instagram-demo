@@ -19,7 +19,7 @@ class Post(models.Model):
     image = models.ImageField(upload_to="images/")
     likes = models.IntegerField(default=0)
     description = models.TextField(default="No Description")
-    post_time = models.DateTimeField(default=timezone.now)
+    post_time = models.DateTimeField()
     image_type = models.CharField(max_length=2, choices=IMG_TYPE)
 
     def __str__(self):
